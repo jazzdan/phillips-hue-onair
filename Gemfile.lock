@@ -1,15 +1,62 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.7.0)
+      public_suffix (>= 2.0.2, < 5.0)
+    backports (3.18.1)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
+    ffi (1.13.1)
+    ffi-compiler (1.0.1)
+      ffi (>= 1.0.0)
+      rake
+    http (4.4.1)
+      addressable (~> 2.3)
+      http-cookie (~> 1.0)
+      http-form_data (~> 2.2)
+      http-parser (~> 1.2.0)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
+    http-form_data (2.3.0)
+    http-parser (1.2.1)
+      ffi-compiler (>= 1.0, < 2.0)
+    multi_json (1.15.0)
+    mustermann (1.1.1)
+      ruby2_keywords (~> 0.0.1)
+    public_suffix (4.0.5)
+    rack (2.2.3)
+    rack-protection (2.0.8.1)
+      rack
+    rake (13.0.1)
+    ruby2_keywords (0.0.2)
+    sinatra (2.0.8.1)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.8.1)
+      tilt (~> 2.0)
+    sinatra-contrib (2.0.8.1)
+      backports (>= 2.8.2)
+      multi_json
+      mustermann (~> 1.0)
+      rack-protection (= 2.0.8.1)
+      sinatra (= 2.0.8.1)
+      tilt (~> 2.0)
     sorbet (0.5.5870)
       sorbet-static (= 0.5.5870)
     sorbet-runtime (0.5.5870)
     sorbet-static (0.5.5870-universal-darwin-14)
+    tilt (2.0.10)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.7)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  http
+  sinatra
+  sinatra-contrib
   sorbet
   sorbet-runtime
 
