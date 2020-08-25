@@ -8,15 +8,15 @@ require 'pp'
 LIVING_ROOM_LIGHT = 9
 BEDROOM_LIGHT = 10
 
-ON_AIR_COLOR = {bri: 254, hue: 46563, sat: 213}
-OFF_AIR_COLOR = {bri: 254, hue: 52349, sat: 21}
+ON_AIR_COLOR = {"bri" => 254, "hue" => 46563, "sat" => 213}
+OFF_AIR_COLOR = {"bri" => 254, "hue" => 52349, "sat" => 21}
 # TODO(dmiller): more states
 
 # map of light ID to last known state that was not set by onair
 $last_known_manual_state = {}
 
 def light_is(status, color)
-    status[:bri] == color[:bri] && status[:hue] == color[:hue] && status[:sat] == color[:sat]
+    status["bri"] == color["bri"] && status["hue"] == color["hue"] && status["sat"] == color["sat"]
 end
 
 def on_or_off_air(status)
@@ -55,6 +55,7 @@ def set_light(id, color)
     bridge_ip = ENV["PHILLIPS_HUE_BRIDGE_IP"]
     allowed_keys = ["on", "bri", "hue", "sat"]
 
+    pp color
     payload = color.select { |key, _| allowed_keys.include?(key)}
     if !payload.key?("on")
         payload["on"] = true
