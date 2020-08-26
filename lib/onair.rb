@@ -71,6 +71,8 @@ def set_light(id, color)
     end
 end
 
+set :bind, '0.0.0.0'
+
 get '/status' do
     living_room_light_status = get_light_status(LIVING_ROOM_LIGHT)
     bedroom_light_status = get_light_status(BEDROOM_LIGHT)
